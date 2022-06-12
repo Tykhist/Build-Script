@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Hello there!"
 
+# Uses changelog.md to display the source code version
 firstline=$(head -n1 source/changelog.md)
 read -a splitfirstline <<< $firstline
 version=${splitfirstline[1]}
@@ -13,6 +14,7 @@ if [ $versioncontinue -eq 1 ]; then
   echo "Continuing..."
   for file in source/*
   do
+    # Prevents secret file (secretinfo.md) from being copied
     if [ "$file" == "source/secretinfo.md" ]; then
       echo "${file} will not be copied"
     else
