@@ -1,4 +1,6 @@
 #!/bin/bash
+# Future Updates: I would like to test the user giving an input for the changelog and secret files, if any
+
 echo "Hello there!"
 
 # Uses changelog.md to display the source code version
